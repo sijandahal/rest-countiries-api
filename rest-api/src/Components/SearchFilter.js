@@ -10,9 +10,15 @@ const SearchFilter = ({ inputValue }) => {
     getSearchResults();
   }, []);
 
-  console.log(inputValue);
+  // console.log(inputValue);
+
+  // if(!inputValue) {
+
+  // }
 
   const getSearchResults = () => {
+    if (!inputValue) return;
+    console.log(inputValue);
     axios
       .get(`https://restcountries.com/v3.1/name/${inputValue}`)
       .then((response) => {
@@ -30,7 +36,7 @@ const SearchFilter = ({ inputValue }) => {
   return filteredData.map((data) => {
     return (
       <>
-        <div className="nepal"> {data.name.common} </div>
+        <div className="wrap"> {data.name.common} </div>
         <div> {data.capital}</div>
       </>
     );
