@@ -26,8 +26,8 @@ export const DataFetching = () => {
       });
   };
   return (
-    <>
+    <div className="wrapper">
       <Countries countries={countries} />
-    </>
+    </div>
   );
 };
