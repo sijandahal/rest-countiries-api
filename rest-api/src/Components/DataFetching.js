@@ -4,6 +4,7 @@ import Countries from "./Countries";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Search } from "./Search";
+import RegionSelect from "./RegionSelect";
 
 export const DataFetching = () => {
   const [countries, setCountries] = useState([]);
@@ -34,7 +35,10 @@ export const DataFetching = () => {
   };
   return (
     <>
-      <Search onSearch={data => setFilteredData(data)} />
+      <div className="flex justify-between wrap">
+        <Search onSearch={(data) => setFilteredData(data)} />
+        <RegionSelect />
+      </div>
       <div className="grid grid-cols-4 wrapper">
         <Countries countries={countries} />
       </div>

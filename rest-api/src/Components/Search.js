@@ -4,18 +4,8 @@ import axios from "axios";
 
 export const Search = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
-  const [selectValue, setselectValue] = useState("");
+ 
 
-  const handleSelectChange = (event) => {
-    setselectValue(event.target.value);
-    console.log(selectValue);
-  }
-
-  // useEffect(() => {
-  //   if (!selectValue) return;
-  //   handleSelectChange();
-  // }, [selectValue]);
-  
 
   useEffect(() => {
     getSearchResults();
@@ -49,15 +39,6 @@ export const Search = ({ onSearch }) => {
         onChange={getInputValue}
         value={inputValue}
       />
-      <select name="select" id="select" onChange={handleSelectChange} value = {selectValue}>
-        <option value="eert3t">Filter By Region</option>
-        <option value="africa">Africa</option>
-        <option value="america">Amercia</option>
-        <option value="asia">Asia</option>
-        <option value="eurpoe">Europe</option>
-        <option value="oceania">Oceania</option>
-      </select>
-
       <h3> Input Value : {inputValue} </h3>
     </div>
   );
